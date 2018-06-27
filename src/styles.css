@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+html{
+  height: 100%;
+}
+
+
+h1 {
+  color: white;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.welcome{
+  text-align: center;
+
+}
+
+h2 {
+  color: white;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(315deg, rgb(42, 124, 25) 0%, rgb(47, 191, 41) 100%);
+  font-family: sans-serif;
+}
+
+img{
+  margin-top: 20px;
+  text-align: center;
+  align-self: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#left,#right,#total{
+  background: #dadfea;
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+#left{
+  padding: 5px;
+  min-width: 100px;
+}
+
+#right{
+  display: flex;
+}
+
+.column{
+  border: 1px gray solid;
+  background: white;
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.cHeader{
+  padding: 10px 10px 6px 10px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.total{
+  margin-bottom: 66px;
+}
+
+.pHeader{
+  padding: 20px 5px 5px 5px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+input{
+  width: 30px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.label{
+  text-align: right;
+  margin-bottom: 2px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.yardage{
+  font-style: italic;
+  color: gray;
+  font-weight: lighter;
+  font-size: 9pt;
+  padding: 3px 0 3px 0;
+}
+
+.par{
+  padding-bottom: 30px;
+  color: darkgreen;
+}
+
+.newPlayer{
+  background-color: darkgreen;
+  color: white;
+  margin-bottom: 11px;
+}
+
+.hole{
+  margin-bottom: 4px;
+}
+
+.subtitle{
+  font-style: italic;
+  text-align: right;
+  font-size: 10pt;
+  padding: 2pt;
+}
+
+.loading{
+  font-style: italic;
+  color: white;
+  font-size: 16pt;
+}
+
+.white{
+  color:white;
+}
