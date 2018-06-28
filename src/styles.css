@@ -1,7 +1,13 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
 html{
   height: 100%;
+  text-align: center;
 }
 
+nav {
+  text-align: center;
+}
 
 h1 {
   color: white;
