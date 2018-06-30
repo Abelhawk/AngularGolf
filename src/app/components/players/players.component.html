@@ -1,0 +1,13 @@
+<mat-card>
+  <p *ngFor="let player of players">
+    {{player.name}}
+    <button mat-button (click)="deletePlayer(player)">delete</button>
+  </p>
+  <div>
+    <label>Player Name:
+      <input #playerName/>
+    </label>
+    <button mat-button (click)="addPlayer(playerName.value); playerName.value=''">New Player</button>
+  </div>
+
+</mat-card>

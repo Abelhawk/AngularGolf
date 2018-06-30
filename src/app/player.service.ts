@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { Observable } from "rxjs/index";
+import { Player } from "./player";
+import { AngularFirestore, AngularFirestoreCollection } from "angularfire2/firestore";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PlayerService {
+  // public players: Observable<any[]>;
+  private db: AngularFirestore;
+  private players: AngularFirestoreCollection<Player>;
+
+
+  constructor(db: AngularFirestore) {
+    this.players = db.collection<Player>('/players');
+  }
+
+  getPlayers(): Observable<Player[]> {
+    return this.players.valueChanges();
+      }
+
+    addPlayer(name: string){
+      let player = {
+        name: name,
+      };
+      this.players.doc(player.name).set(player).then(function (){console.log('done!')} );
+
+    }
+}

@@ -1,11 +1,13 @@
 <mat-card>
   <div class="welcome">
-    <h1>Welcome to {{title}}</h1>
+    <h1>{{title}}!</h1>
     <img src="https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/10112953/uploaded-photo68921726-480x270.png">
   </div>
   <nav>
-    <button mat-button color="accent" routerLink="/select-tee">Select Tee</button>
-    <button mat-button color="accent" routerLink="/columns">Let's Play!</button>
+    <button mat-button color="accent" routerLink="/players">Players</button>
+    <button mat-button color="accent" routerLink="/game">Let's Play!</button>
   </nav>
   <router-outlet></router-outlet>
 </mat-card>
+
+<!-- http://uxcobra.com/golfapi/course11819.txt -->

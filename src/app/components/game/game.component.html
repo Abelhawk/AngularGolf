@@ -1,0 +1,23 @@
+<app-select-tee></app-select-tee>
+<mat-card>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile style="width: 50%">
+      <h2>Players</h2>
+      <p>Yardage</p>
+      <p>Par</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      
+      <div *ngFor="let hole of holes | async">
+        <h2>{{ hole.name }}</h2>
+        <p>{{ hole.pro.yardage }}</p>
+        <p>{{ hole.pro.par }}</p>
+      </div>
+    
+    </mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+
+
