@@ -22,11 +22,11 @@ export class PlayersComponent implements OnInit {
   }
 
   addPlayer(name: string) {
-    this.playerService.addPlayer(name)/*.(player => {this.players.push(player)})*/;
+    this.playerService.addPlayer(name);
   }
 
-  deletePlayer() {
-
+  deletePlayer(name: object) {
+    this.playerService.deletePlayer(name);
   }
 
 }

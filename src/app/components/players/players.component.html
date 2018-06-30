@@ -1,13 +1,18 @@
 <mat-card>
-  <p *ngFor="let player of players">
+  <p *ngFor="let player of players" class="playerList">
     {{player.name}}
-    <button mat-button (click)="deletePlayer(player)">delete</button>
-  </p>
+    <button mat-button class="deleteBtn" (click)="deletePlayer(player.name)">x</button>
+    <div class="emptyList" *ngIf='(players)?.length === 0'>No players yet!</div>
+  <!--</p>-->
   <div>
-    <label>Player Name:
-      <input #playerName/>
-    </label>
-    <button mat-button (click)="addPlayer(playerName.value); playerName.value=''">New Player</button>
+    <form class="newPlayerForm">
+      <mat-form-field>
+        <input #playerName matInput placeholder="Player name" value=""><br>
+      </mat-form-field>
+      <button mat-button type="button" (click)="addPlayer(playerName.value); playerName.value=''">Create New</button>
+    
+    
+    </form>
   </div>
 
 </mat-card>

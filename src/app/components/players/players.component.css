@@ -1,0 +1,24 @@
+.deleteBtn{
+  background-color: darkseagreen;
+  min-width: 1%;
+  line-height: 1%;
+  font-size: 8pt;
+  padding: 5px;
+}
+
+.newPlayerForm{
+  background-color: darkseagreen;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.playerList{
+  margin: 5px 0 10px 0;
+}
+
+.emptyList{
+  font-style: italic;
+  margin: 15px;
+  color: #dadfea;
+  font-weight: lighter;
+}

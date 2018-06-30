@@ -24,7 +24,14 @@ export class PlayerService {
       let player = {
         name: name,
       };
-      this.players.doc(player.name).set(player).then(function (){console.log('done!')} );
+      this.players.doc(player.name).set(player).then(function (){console.log('player added!')} );
+    }
+
+    deletePlayer(name: object){
+    let player = {
+      name: name,
+    };
+      this.players.doc(player.name).delete(player).then(function (){console.log('player deleted!')} );
 
     }
 }

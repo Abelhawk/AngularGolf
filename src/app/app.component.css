@@ -1,3 +1,7 @@
 mat-radio-button{
   font-size: 12pt;
 }
+
+mat-card{
+  background: #424242;
+}
