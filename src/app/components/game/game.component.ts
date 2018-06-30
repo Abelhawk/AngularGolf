@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from "rxjs/index";
-import { AngularFirestore } from "angularfire2/firestore";
+import { Player } from "../../player";
+import { PlayerService } from "../players/player.service";
+import { CourseService, HolesData } from "./course.service";
 
 @Component({
   selector: 'app-game',
@@ -8,13 +10,29 @@ import { AngularFirestore } from "angularfire2/firestore";
   styleUrls: ['./game.component.css']
 })
 export class GameComponent {
-  public holes: Observable<any[]>;
+  holes: HolesData;
+  players: Array<Player>;
 
-  constructor(db: AngularFirestore) {
-    this.holes = db.collection('/holes').valueChanges();
+  constructor(
+    private playerService: PlayerService,
+    private courseService: CourseService
+  ) {
   }
 
   ngOnInit() {
+    this.getPlayers();
+    this.loadCourse();
   }
 
+  getPlayers() {
+    this.playerService.getPlayers().subscribe(players => this.players = players);
+  }
+
+  loadCourse() {
+    this.courseService.getCourse().subscribe((holes) => holes);
+  }
+
+  hack(val) {
+    return Array.from(val);
+  }
 }

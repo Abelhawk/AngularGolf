@@ -2,3 +2,21 @@ mat-grid-tile{
   background: white;
   color: black;
 }
+
+#gameArea {
+  color: black;
+  text-align: center;
+}
+
+.colSubtitle{
+  font-style: italic;
+  text-align: right;
+  font-size: 10pt;
+  padding: 2pt;
+}
+
+.pHeader{
+  padding: 20px 5px 5px 5px;
+  font-weight: bold;
+  font-size: 12pt;
+}

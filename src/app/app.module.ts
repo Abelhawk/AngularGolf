@@ -12,6 +12,7 @@ import { environment } from "../environments/environment";
 import { AngularFireModule } from "angularfire2";
 import { GameComponent } from "./components/game/game.component";
 import { PlayersComponent } from "./components/players/players.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PlayersComponent } from "./components/players/players.component";
     MatButtonModule,
     AppRoutingModule,
     MaterialModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

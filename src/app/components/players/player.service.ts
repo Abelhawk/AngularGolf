@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/index";
-import { Player } from "./player";
+import { Player } from "../../player";
 import { AngularFirestore, AngularFirestoreCollection } from "angularfire2/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
-  // public players: Observable<any[]>;
-  private db: AngularFirestore;
+  // private db: AngularFirestore;
   private players: AngularFirestoreCollection<Player>;
 
 

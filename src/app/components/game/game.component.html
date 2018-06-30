@@ -1,22 +1,31 @@
 <mat-card>
   <app-select-tee></app-select-tee>
-  <mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile style="width: 50%">
-      <h2>Players</h2>
-      <p>Yardage</p>
-      <p>Par</p>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      
-      <div *ngFor="let hole of holes | async">
-        <h2>{{ hole.name }}</h2>
-        <p>{{ hole.pro.yardage }}</p>
-        <p>{{ hole.pro.par }}</p>
+  
+  <div id="gameArea">
+    <div id="left">
+      <div class="pHeader">Players</div>
+      <div class="colSubtitle">Yardage</div>
+      <div class="colSubtitle">Par</div>
+      <div id="players" *ngFor="let player of players">
+        {{player.name}}
       </div>
+      <br>
+    </div>
     
-    </mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-  </mat-grid-list>
+    <div id="columns">
+      <div style="color:white">IF BELOW HAS ANY TEXT AT ALL, YOU WIN!:</div>
+      <div *ngFor="let course of hack(holes.data)">
+        <div>Hole #{{course.holes[0].hole}}</div>
+        <div>Yardage: {{course.holes[0].teeBoxes[0].yards}}</div>
+        <div>Par: {{course.holes[0].teeBoxes[0].yards}}</div>
+      </div>
+    </div>
+    
+    <div id="total">
+    
+    </div>
+  </div>
+
 </mat-card>
 
 
