@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-tee.component.css']
 })
 export class SelectTeeComponent implements OnInit {
-  tee: string;
+  tee: number;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeTee(chosenTee){
+    this.tee = chosenTee;
+    console.log("Changed to tee #" + chosenTee);
+  }
 }

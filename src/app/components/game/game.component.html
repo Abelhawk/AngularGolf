@@ -14,10 +14,10 @@
     
     <div id="columns">
       <div style="color:white">IF BELOW HAS ANY TEXT AT ALL, YOU WIN!:</div>
-      <div *ngFor="let course of hack(holes.data)">
-        <div>Hole #{{course.holes[0].hole}}</div>
-        <div>Yardage: {{course.holes[0].teeBoxes[0].yards}}</div>
-        <div>Par: {{course.holes[0].teeBoxes[0].yards}}</div>
+      <div *ngFor="let hole of course.holes">
+        <div>Hole #{{hole.hole}}</div>
+        <div>Yardage: {{hole.teeBoxes[0].yards}}</div>
+        <div>Par: {{hole.teeBoxes[0].yards}}</div>
       </div>
     </div>
     

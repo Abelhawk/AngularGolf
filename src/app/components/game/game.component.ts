@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from "rxjs/index";
 import { Player } from "../../player";
 import { PlayerService } from "../players/player.service";
-import { CourseService, HolesData } from "./course.service";
+import { CourseService } from "./course.service";
 
 @Component({
   selector: 'app-game',
@@ -10,7 +9,7 @@ import { CourseService, HolesData } from "./course.service";
   styleUrls: ['./game.component.css']
 })
 export class GameComponent {
-  holes: HolesData;
+  private course: null;
   players: Array<Player>;
 
   constructor(
@@ -29,10 +28,13 @@ export class GameComponent {
   }
 
   loadCourse() {
-    this.courseService.getCourse().subscribe((holes) => holes);
+    this.courseService.getCourse().subscribe(data => {
+      console.log(data);
+      this.course = data.data;
+    });
   }
 
-  hack(val) {
-    return Array.from(val);
-  }
+  // hack(val) {
+  //   return Array.from(val);
+  // }
 }
