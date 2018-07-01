@@ -20,3 +20,74 @@ mat-grid-tile{
   font-weight: bold;
   font-size: 12pt;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+#left,
+#right,
+#total {
+  background: #dadfea;
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+#left {
+  padding: 5px;
+  min-width: 100px;
+}
+#right {
+  display: flex;
+}
+.column {
+  border: 1px gray solid;
+  background: white;
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.cHeader {
+  padding: 10px 10px 6px 10px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+.total {
+  margin-bottom: 66px;
+}
+.pHeader {
+  padding: 20px 5px 5px 5px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+input {
+  width: 30px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.label {
+  text-align: right;
+  margin-bottom: 2px;
+}
+button {
+  cursor: pointer;
+}
+.yardage {
+  font-style: italic;
+  color: gray;
+  font-weight: lighter;
+  font-size: 9pt;
+  padding: 3px 0 3px 0;
+}
+.par {
+  padding-bottom: 30px;
+  color: darkgreen;
+}
+
+#playerTotals{
+  /*margin-top: 70px;*/
+  margin-bottom: 3px;
+}

@@ -13,6 +13,7 @@ import { AngularFireModule } from "angularfire2";
 import { GameComponent } from "./components/game/game.component";
 import { PlayersComponent } from "./components/players/players.component";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientModule } from "@angular/common/http";
     MaterialModule,
     MatGridListModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

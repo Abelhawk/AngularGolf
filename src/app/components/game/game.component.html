@@ -1,28 +1,38 @@
 <mat-card>
   <app-select-tee></app-select-tee>
   
-  <div id="gameArea">
+  <div class="container">
     <div id="left">
       <div class="pHeader">Players</div>
       <div class="colSubtitle">Yardage</div>
       <div class="colSubtitle">Par</div>
       <div id="players" *ngFor="let player of players">
-        {{player.name}}
+        <div>
+          {{player.name}}
+        </div>
+        
       </div>
       <br>
     </div>
     
-    <div id="columns">
-      <div style="color:white">IF BELOW HAS ANY TEXT AT ALL, YOU WIN!:</div>
-      <div *ngFor="let hole of course.holes">
-        <div>Hole #{{hole.hole}}</div>
-        <div>Yardage: {{hole.teeBoxes[0].yards}}</div>
-        <div>Par: {{hole.teeBoxes[0].yards}}</div>
-      </div>
+    <div id="right">
+      <div class="column" *ngFor="let hole of course.holes; let i = index">
+        <div class="cHeader">{{hole.hole}}</div>
+        <div class="yardage">{{hole.teeBoxes[0].yards}}</div>
+        <div class="par">{{hole.teeBoxes[0].par}}</div>
+        <div id="scores" *ngFor="let player of players">
+          <input [(ngModel)]="player.scores[i]" type="number" class="hole_player" (change)="totalScore(); saveScores(player)">
+        </div>
+        </div>
     </div>
     
     <div id="total">
-    
+      <div class="column">
+        <div class="cHeader">Total</div>
+        <div id="playerTotals" *ngFor="let player of players">
+          <div class="playerTot">0</div>
+        </div>
+        </div>
     </div>
   </div>
 

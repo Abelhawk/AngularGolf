@@ -33,4 +33,8 @@ export class PlayerService {
       this.players.doc(player.name).delete(player).then(function (){console.log('player deleted!')} );
 
     }
+
+    updatePlayer(player){
+      this.players.doc(player.name).set(player);
+    }
 }

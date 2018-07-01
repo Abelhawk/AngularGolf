@@ -8,8 +8,13 @@ import { CourseService } from "./course.service";
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
+
+// import SelectTeeComponent {
+//
+// }
+
 export class GameComponent {
-  private course: null;
+  private course;
   players: Array<Player>;
 
   constructor(
@@ -34,7 +39,11 @@ export class GameComponent {
     });
   }
 
-  // hack(val) {
-  //   return Array.from(val);
-  // }
+  saveScores(player){
+    this.playerService.updatePlayer(player);
+  }
+
+  totalScore(){
+
+  }
 }
