@@ -1,11 +1,15 @@
 <mat-card>
   <mat-radio-group>
     <div class="radiobox">
-      <h3>Select Tee</h3>
-      <mat-radio-button value="1" checked (change)="changeTee(0)">Pro</mat-radio-button><br>
-      <mat-radio-button value="2" (change)="changeTee(1)">Champion</mat-radio-button><br>
-      <mat-radio-button value="3" (change)="changeTee(2)">Men's</mat-radio-button><br>
-      <mat-radio-button value="4" (change)="changeTee(3)">Women's</mat-radio-button><br>
+      <h3>Select Tee:</h3>
+      <mat-radio-button value="1" checked (change)="changeTee(0)">Pro</mat-radio-button>
+      <br>
+      <mat-radio-button value="2" (change)="changeTee(1)">Champion</mat-radio-button>
+      <br>
+      <mat-radio-button value="3" (change)="changeTee(2)">Men's</mat-radio-button>
+      <br>
+      <mat-radio-button value="4" (change)="changeTee(3)">Women's</mat-radio-button>
+      <br>
     </div>
   </mat-radio-group>
   
@@ -15,11 +19,13 @@
       <div class="pHeader">Players</div>
       <div class="colSubtitle">Yardage</div>
       <div class="colSubtitle">Par</div>
-      <div id="players" *ngFor="let player of players">
-        <div>
-          {{player.name}}
+      <div id="players">
+        <div *ngFor="let player of players">
+          <div class="playerName">
+            {{player.name}}
+          </div>
         </div>
-        
+      
       </div>
       <br>
     </div>
@@ -30,18 +36,19 @@
         <div class="yardage">{{hole.teeBoxes[this.tee].yards}}</div>
         <div class="par">{{hole.teeBoxes[this.tee].par}}</div>
         <div id="scores" *ngFor="let player of players">
-          <input [(ngModel)]="player.scores[i]" type="number" class="hole_player" (change)="totalScore(); saveScores(player)">
+          <input [(ngModel)]="player.scores[i]" type="number" class="hole_player"
+                 (change)="totalScore(); saveScores(player)">
         </div>
-        </div>
+      </div>
     </div>
     
     <div id="total">
       <div class="column">
-        <div class="cHeader">Total</div>
+        <div id="totalH" class="cHeader">Total</div>
         <div id="playerTotals" *ngFor="let player of players">
-          <div class="playerTot">0</div>
+          <div class="playerTot">{{calcTotal(player.scores)}}</div>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 

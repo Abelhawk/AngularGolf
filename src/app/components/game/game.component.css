@@ -55,13 +55,14 @@ mat-grid-tile{
   font-weight: bold;
   font-size: 12pt;
 }
-.total {
-  margin-bottom: 66px;
+#totalH {
+  margin-bottom: 70px;
 }
 .pHeader {
   padding: 20px 5px 5px 5px;
   font-weight: bold;
   font-size: 12pt;
+  text-align: right;
 }
 input {
   width: 30px;
@@ -78,8 +79,8 @@ button {
 .yardage {
   font-style: italic;
   color: gray;
-  font-weight: lighter;
-  font-size: 9pt;
+  /*font-weight: lighter;*/
+  font-size: 12pt;
   padding: 3px 0 3px 0;
 }
 .par {
@@ -88,7 +89,6 @@ button {
 }
 
 #playerTotals{
-  /*margin-top: 70px;*/
   margin-bottom: 3px;
 }
 
@@ -106,4 +106,18 @@ mat-radio-group{
 
 h3{
   margin: 0 0 15px 0;
+  font-size: 12pt;
+}
+
+#players{
+  margin-top: 33px;
+  text-align: right;
+}
+
+.playerName{
+  margin: 5px 0 5px 0;
+}
+
+.playerTot{
+  margin-top: 5px;
 }

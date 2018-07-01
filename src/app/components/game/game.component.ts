@@ -53,4 +53,12 @@ export class GameComponent {
   totalScore(){
 
   }
+
+  calcTotal(player){
+    let sum = 0;
+    for(let i = 0; i < 18; i++){
+      sum += player[i];
+    }
+    return sum;
+  }
 }
