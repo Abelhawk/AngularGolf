@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from '../../player';
 import { PlayerService } from "./player.service";
 import { CourseService } from "../game/course.service";
-import { HolesData } from "../../holes";
-import { Observable } from "rxjs/index";
-import { HttpResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-players',
@@ -16,7 +13,6 @@ export class PlayersComponent implements OnInit {
 
   constructor(
     private playerService: PlayerService,
-    private courseService: CourseService
     ) {
   }
 
@@ -39,8 +35,8 @@ export class PlayersComponent implements OnInit {
 
   }
 
-  deletePlayer(name: object) {
-    this.playerService.deletePlayer(name);
+  deletePlayer(player) {
+    this.playerService.deletePlayer(player);
   }
 
   // getHoles(){

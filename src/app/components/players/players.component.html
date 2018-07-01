@@ -1,7 +1,7 @@
 <mat-card>
   <p *ngFor="let player of players" class="playerList">
     {{player.name}}
-    <button mat-button class="deleteBtn" (click)="deletePlayer(player.name)">x</button>
+    <button mat-button class="deleteBtn" (click)="deletePlayer(player)">x</button>
     <div class="emptyList" *ngIf='(players)?.length === 0'>No players yet!</div>
   <!--</p>-->
   <div>

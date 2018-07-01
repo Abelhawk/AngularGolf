@@ -27,11 +27,8 @@ export class PlayerService {
       this.players.doc(player.name).set(player).then(function (){console.log('player added!')} );
     }
 
-    deletePlayer(name: object){
-    let player = {
-      name: name,
-    };
-      this.players.doc(player.name).delete(player).then(function (){console.log('player deleted!')} );
+    deletePlayer(player){
+      this.players.doc(player.name).delete().then(function (){console.log('player deleted!')} );
 
     }
 

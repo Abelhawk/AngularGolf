@@ -14,7 +14,7 @@ import { CourseService } from "./course.service";
 // }
 
 export class GameComponent {
-  private course;
+  public course;
   players: Array<Player>;
   private tee;
 
@@ -41,7 +41,7 @@ export class GameComponent {
   loadCourse() {
     this.courseService.getCourse().subscribe(data => {
       console.log(data);
-      this.course = data.data;
+      this.course = data['data'];
       this.tee = 0;
     });
   }
