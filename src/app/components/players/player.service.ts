@@ -22,6 +22,7 @@ export class PlayerService {
     addPlayer(name: string){
       let player = {
         name: name,
+        scores: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
       };
       this.players.doc(player.name).set(player).then(function (){console.log('player added!')} );
     }

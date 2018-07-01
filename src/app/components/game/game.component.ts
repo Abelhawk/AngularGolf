@@ -16,6 +16,7 @@ import { CourseService } from "./course.service";
 export class GameComponent {
   private course;
   players: Array<Player>;
+  private tee;
 
   constructor(
     private playerService: PlayerService,
@@ -28,6 +29,11 @@ export class GameComponent {
     this.loadCourse();
   }
 
+  changeTee(chosenTee){
+    this.tee = chosenTee;
+    console.log("Changed to tee #" + chosenTee);
+  }
+
   getPlayers() {
     this.playerService.getPlayers().subscribe(players => this.players = players);
   }
@@ -36,6 +42,7 @@ export class GameComponent {
     this.courseService.getCourse().subscribe(data => {
       console.log(data);
       this.course = data.data;
+      this.tee = 0;
     });
   }
 

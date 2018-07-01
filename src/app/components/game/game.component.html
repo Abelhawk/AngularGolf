@@ -1,5 +1,14 @@
 <mat-card>
-  <app-select-tee></app-select-tee>
+  <mat-radio-group>
+    <div class="radiobox">
+      <h3>Select Tee</h3>
+      <mat-radio-button value="1" checked (change)="changeTee(0)">Pro</mat-radio-button><br>
+      <mat-radio-button value="2" (change)="changeTee(1)">Champion</mat-radio-button><br>
+      <mat-radio-button value="3" (change)="changeTee(2)">Men's</mat-radio-button><br>
+      <mat-radio-button value="4" (change)="changeTee(3)">Women's</mat-radio-button><br>
+    </div>
+  </mat-radio-group>
+  
   
   <div class="container">
     <div id="left">
@@ -18,8 +27,8 @@
     <div id="right">
       <div class="column" *ngFor="let hole of course.holes; let i = index">
         <div class="cHeader">{{hole.hole}}</div>
-        <div class="yardage">{{hole.teeBoxes[0].yards}}</div>
-        <div class="par">{{hole.teeBoxes[0].par}}</div>
+        <div class="yardage">{{hole.teeBoxes[this.tee].yards}}</div>
+        <div class="par">{{hole.teeBoxes[this.tee].par}}</div>
         <div id="scores" *ngFor="let player of players">
           <input [(ngModel)]="player.scores[i]" type="number" class="hole_player" (change)="totalScore(); saveScores(player)">
         </div>
